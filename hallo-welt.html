@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Phaser.js Hello World</title>
+    <script src="https://cdn.jsdelivr.net/npm/phaser@3.55.2/dist/phaser.min.js"></script>
+  </head>
+  <body>
+    <script>
+      // Phaser Spiel-Konfiguration
+      const config = {
+        type: Phaser.AUTO, // Automatische Auswahl zwischen WebGL und Canvas
+        width: 800, // Breite des Spiels
+        height: 600, // Höhe des Spiels
+        scene: {
+          preload: preload, // Lädt Ressourcen vor
+          create: create, // Erstellt das Spiel nach dem Laden
+        },
+      };
+
+      // Erstellen des Spiels
+      const game = new Phaser.Game(config);
+
+      // Preload-Funktion: Hier kannst du Ressourcen (Bilder, Sounds) laden
+      function preload() {
+        // Beispiel: Kein Preload in diesem einfachen Beispiel nötig
+      }
+
+      // Create-Funktion: Hier kannst du das Spiel starten
+      function create() {
+        // Füge einen Text hinzu (x, y, Textinhalt, Stil)
+        this.add.text(100, 100, "Hallo Welt!", {
+          font: "40px Arial",
+          fill: "#ffffff",
+        });
+      }
+    </script>
+  </body>
+</html>
